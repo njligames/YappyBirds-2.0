@@ -1,0 +1,4 @@
+[submodule "GenerateIcons"]
+	path = GenerateIcons
+	url = git@github.com:njligames/GenerateIcons.git
+	branch = master

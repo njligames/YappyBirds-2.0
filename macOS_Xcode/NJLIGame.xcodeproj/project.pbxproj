@@ -1,0 +1,1449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		12DD1B8EDCE441D5A22A0601 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9A5EA7B4087D4CC084E41EB1 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				0ED306427C55405A99B6BBD2 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				E753D329B2FF4B27B9E482D4 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		4B78840F3D1C4F469194679E /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E3211AC9240440C599F51579 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				5B227A93F94E4C29B5D54F59 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		5CB8373F6B7A4EA58173ABD9 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3FC0CB09EFEF476DB70135F5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				0B5ABD4EA0A24913ACFF9EFE /* CMake Rules */,
+			);
+			dependencies = (
+				26DEFEE067204854856138B0 /* PBXTargetDependency */,
+				C990F9E21D8C46AF96AE4883 /* PBXTargetDependency */,
+				663B9F65C7D14C90A2BA9DB4 /* PBXTargetDependency */,
+				CF9FB43A803D4B5389BD2AEE /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		5E7A9017DB1F4B499FA342B8 /* Ldoc */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EE231C48F8484A2793035BAE /* Build configuration list for PBXAggregateTarget "Ldoc" */;
+			buildPhases = (
+				4739902072C84A33B3730D4D /* CMake Rules */,
+			);
+			dependencies = (
+				44A8878466714B4885FA82C5 /* PBXTargetDependency */,
+			);
+			name = Ldoc;
+			productName = Ldoc;
+		};
+		75901CF5023A46878A6DA58A /* really-clean */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8A3D60368FBF47E0B2B1E779 /* Build configuration list for PBXAggregateTarget "really-clean" */;
+			buildPhases = (
+				C58694886B9D420BB9B0D5AD /* CMake Rules */,
+			);
+			dependencies = (
+				10EBDEF767104DC595FAD7DE /* PBXTargetDependency */,
+			);
+			name = "really-clean";
+			productName = "really-clean";
+		};
+		9361A612BE1E428A9E5E16C8 /* CreateIcons */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 957DE083170B4880A32D7A6F /* Build configuration list for PBXAggregateTarget "CreateIcons" */;
+			buildPhases = (
+				9DB9D92FBBB44EF286FBB463 /* CMake Rules */,
+			);
+			dependencies = (
+				FD9C04772D69484783409100 /* PBXTargetDependency */,
+			);
+			name = CreateIcons;
+			productName = CreateIcons;
+		};
+		D70D7E3539AA4208A7B4164F /* package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0D21BB95E3224266AD866C6F /* Build configuration list for PBXAggregateTarget "package" */;
+			buildPhases = (
+				9EE365285A6A44A096E2F7C9 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				71A27F80AD9B4EEB96E606B4 /* PBXTargetDependency */,
+			);
+			name = package;
+			productName = package;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		23AE40D68B66458F8CC94255 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */ = {isa = PBXBuildFile; fileRef = 21AD796ED9A44A4F90764F10 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */; };
+		3ADB2EA0439D41339056CAD8 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/NJLIGame.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = B132AE124AF74B94B5039E19 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/NJLIGame.dir/Info.plist */; };
+		E1000E8C119F4E8981052EFE /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 9F259688756C494F872635DA /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */; };
+		E5D5149F4B19424389209BF7 /* //assets */ = {isa = PBXBuildFile; fileRef = 8344850CC5154F0FBBE78FF1 /* //assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		13D90F97B4B14506A1B24578 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		1F73D190FC2D4FB3AD63E883 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		281B5EBB7A2542829C43FF95 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		6DB03A7E10B141FAA633E607 = {
+			isa = PBXBuildStyle;
+		};
+		993CF5E875374BE4ABF78C05 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		0D4362D717AF47618BFF6DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E7A9017DB1F4B499FA342B8;
+			remoteInfo = Ldoc;
+		};
+		0F89024419EE489B88353629 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BD681A22FD746EBAA5A8B63;
+			remoteInfo = NJLIGame;
+		};
+		3EEFD07B460A4541A257A8E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CB8373F6B7A4EA58173ABD9;
+			remoteInfo = ALL_BUILD;
+		};
+		77B0F46A05DB437F9181674A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B78840F3D1C4F469194679E;
+			remoteInfo = ZERO_CHECK;
+		};
+		80F32CD54B4D4021B6C42F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9361A612BE1E428A9E5E16C8;
+			remoteInfo = CreateIcons;
+		};
+		83A4F50C7D2944D28AB39B30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B78840F3D1C4F469194679E;
+			remoteInfo = ZERO_CHECK;
+		};
+		84354FDCD1E041AA93E58586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B78840F3D1C4F469194679E;
+			remoteInfo = ZERO_CHECK;
+		};
+		ADEED4352CB440CFA1EF519C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B78840F3D1C4F469194679E;
+			remoteInfo = ZERO_CHECK;
+		};
+		C73CCED9C3AE478880E5B8C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B78840F3D1C4F469194679E;
+			remoteInfo = ZERO_CHECK;
+		};
+		E467042C3B0F44C9B56DE5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B9F1816D444B0BAF3CC961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CB8373F6B7A4EA58173ABD9;
+			remoteInfo = ALL_BUILD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20954C17BBD34143BD387D2E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IconInput.png; path = project.in/platform/IconInput.png; sourceTree = SOURCE_ROOT; };
+		21AD796ED9A44A4F90764F10 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = projects/icons/macOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		316A8A97FAC34995AD14B2CD /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/LaunchInput.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = LaunchInput.png; path = project.in/platform/LaunchInput.png; sourceTree = SOURCE_ROOT; };
+		622706810476402F92E4425E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Back.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IconInput_Back.png; path = project.in/platform/IconInput_Back.png; sourceTree = SOURCE_ROOT; };
+		74038C51A80C447E8D9A96E7 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		74CC76924D704055B808EB0B /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Middle.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IconInput_Middle.png; path = project.in/platform/IconInput_Middle.png; sourceTree = SOURCE_ROOT; };
+		75F59CE049F7489A898E4D0E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Front.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IconInput_Front.png; path = project.in/platform/IconInput_Front.png; sourceTree = SOURCE_ROOT; };
+		8344850CC5154F0FBBE78FF1 /* //assets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = assets; path = "//assets"; sourceTree = "<absolute>"; };
+		9AEFA1B1D156445D9C228E96 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9E397831003849E9AD072010 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9E75F24CC2F94A3AABA68506 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9F259688756C494F872635DA /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B132AE124AF74B94B5039E19 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/NJLIGame.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = macOS_Xcode/CMakeFiles/NJLIGame.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		D31333F0E6684C7FB4A3BFEE /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		DB41417B914A457AB6FE8C0A /* NJLIGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = NJLIGame; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1108BF5FA8D1489FA712A528 /* really-clean */ = {
+			isa = PBXGroup;
+			children = (
+				18E37980B29D40468A744481 /* CMake Rules */,
+				9AEFA1B1D156445D9C228E96 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+			);
+			name = "really-clean";
+			sourceTree = "<group>";
+		};
+		155FA9F340644EF388C0121A /* CreateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				65E905A5E4C146A6B3339D62 /* CMake Rules */,
+				622706810476402F92E4425E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Back.png */,
+				75F59CE049F7489A898E4D0E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Front.png */,
+				74CC76924D704055B808EB0B /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput_Middle.png */,
+				20954C17BBD34143BD387D2E /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/IconInput.png */,
+				316A8A97FAC34995AD14B2CD /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/project.in/platform/LaunchInput.png */,
+				9E75F24CC2F94A3AABA68506 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+			);
+			name = CreateIcons;
+			sourceTree = "<group>";
+		};
+		18E37980B29D40468A744481 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		3C227A164352457EAE594793 /* NJLIGame */ = {
+			isa = PBXGroup;
+			children = (
+				79C261427C334D24BFD5C6C8 /* Resources */,
+				8344850CC5154F0FBBE78FF1 /* //assets */,
+				9F259688756C494F872635DA /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+				21AD796ED9A44A4F90764F10 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */,
+			);
+			name = NJLIGame;
+			sourceTree = "<group>";
+		};
+		4B9AD2AE79E34279AA7E6617 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				F7089B0B054940FD97B3CC3A /* CMake Rules */,
+				D31333F0E6684C7FB4A3BFEE /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		5FCF1D726C534600AF0B935F /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		603E30C87BF640A78579F569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB41417B914A457AB6FE8C0A /* NJLIGame */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65E905A5E4C146A6B3339D62 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		6D69CEF7185541389A0C3E6B = {
+			isa = PBXGroup;
+			children = (
+				924B02BF01104A4B8DF843B1 /* Sources */,
+				A4CD49AAABE6496D83CD58DC /* Resources */,
+				603E30C87BF640A78579F569 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79C261427C334D24BFD5C6C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B132AE124AF74B94B5039E19 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/NJLIGame.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		914A5ADB0E2A4F41BDA17148 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				A9282F5231F74F69898117EA /* CMake Rules */,
+				74038C51A80C447E8D9A96E7 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		924B02BF01104A4B8DF843B1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1108BF5FA8D1489FA712A528 /* really-clean */,
+				3C227A164352457EAE594793 /* NJLIGame */,
+				B12AC0A3AE94438C9BE2E540 /* Ldoc */,
+				155FA9F340644EF388C0121A /* CreateIcons */,
+				914A5ADB0E2A4F41BDA17148 /* ALL_BUILD */,
+				4B9AD2AE79E34279AA7E6617 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		A4CD49AAABE6496D83CD58DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8344850CC5154F0FBBE78FF1 /* //assets */,
+				21AD796ED9A44A4F90764F10 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A9282F5231F74F69898117EA /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B12AC0A3AE94438C9BE2E540 /* Ldoc */ = {
+			isa = PBXGroup;
+			children = (
+				5FCF1D726C534600AF0B935F /* CMake Rules */,
+				9E397831003849E9AD072010 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/CMakeLists.txt */,
+			);
+			name = Ldoc;
+			sourceTree = "<group>";
+		};
+		F7089B0B054940FD97B3CC3A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BD681A22FD746EBAA5A8B63 /* NJLIGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE386A4AD44F47A9B9937842 /* Build configuration list for PBXNativeTarget "NJLIGame" */;
+			buildPhases = (
+				16FCF470C48F4C449864878C /* CMake PreBuild Rules */,
+				EEE0CA6FC51848E5A96C0C5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96A950249ED14BEBADD412EE /* PBXTargetDependency */,
+			);
+			name = NJLIGame;
+			productName = NJLIGame;
+			productReference = DB41417B914A457AB6FE8C0A /* NJLIGame */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3B9F1816D444B0BAF3CC961 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = 594EA9B4E21342EBAD619D5D /* Build configuration list for PBXProject "NJLIGame" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				13D90F97B4B14506A1B24578 /* Debug */,
+				993CF5E875374BE4ABF78C05 /* Release */,
+				281B5EBB7A2542829C43FF95 /* MinSizeRel */,
+				1F73D190FC2D4FB3AD63E883 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 6D69CEF7185541389A0C3E6B;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				5CB8373F6B7A4EA58173ABD9 /* ALL_BUILD */,
+				9361A612BE1E428A9E5E16C8 /* CreateIcons */,
+				5E7A9017DB1F4B499FA342B8 /* Ldoc */,
+				2BD681A22FD746EBAA5A8B63 /* NJLIGame */,
+				4B78840F3D1C4F469194679E /* ZERO_CHECK */,
+				12DD1B8EDCE441D5A22A0601 /* install */,
+				D70D7E3539AA4208A7B4164F /* package */,
+				75901CF5023A46878A6DA58A /* really-clean */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B5ABD4EA0A24913ACFF9EFE /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		0ED306427C55405A99B6BBD2 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		16FCF470C48F4C449864878C /* CMake PreBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PreBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/NJLIGame_preBuildCommands.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		29824F62493B43748B484BD8 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		2B12220DEFA24B0D8685C685 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		4739902072C84A33B3730D4D /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/Ldoc_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		5B227A93F94E4C29B5D54F59 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		685A892BE8C147899162E14B = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7B40059137B44C1AA844B952 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		83F8B8CCCF1C4A659F769127 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		8D81C8A7DDAB41A69E04A151 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9DB9D92FBBB44EF286FBB463 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/CreateIcons_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		9EE365285A6A44A096E2F7C9 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/package_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B5B6E7A5C8A44E1991426005 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C58694886B9D420BB9B0D5AD /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode -f /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeScripts/really-clean_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEE0CA6FC51848E5A96C0C5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D5149F4B19424389209BF7 /* //assets */,
+				23AE40D68B66458F8CC94255 /* /Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/icons/macOS/Assets.xcassets */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10EBDEF767104DC595FAD7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B78840F3D1C4F469194679E /* ZERO_CHECK */;
+			targetProxy = 83A4F50C7D2944D28AB39B30 /* PBXContainerItemProxy */;
+		};
+		26DEFEE067204854856138B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B78840F3D1C4F469194679E /* ZERO_CHECK */;
+			targetProxy = 84354FDCD1E041AA93E58586 /* PBXContainerItemProxy */;
+		};
+		44A8878466714B4885FA82C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B78840F3D1C4F469194679E /* ZERO_CHECK */;
+			targetProxy = 77B0F46A05DB437F9181674A /* PBXContainerItemProxy */;
+		};
+		663B9F65C7D14C90A2BA9DB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9361A612BE1E428A9E5E16C8 /* CreateIcons */;
+			targetProxy = 80F32CD54B4D4021B6C42F8F /* PBXContainerItemProxy */;
+		};
+		71A27F80AD9B4EEB96E606B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CB8373F6B7A4EA58173ABD9 /* ALL_BUILD */;
+			targetProxy = 3EEFD07B460A4541A257A8E8 /* PBXContainerItemProxy */;
+		};
+		96A950249ED14BEBADD412EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B78840F3D1C4F469194679E /* ZERO_CHECK */;
+			targetProxy = ADEED4352CB440CFA1EF519C /* PBXContainerItemProxy */;
+		};
+		C990F9E21D8C46AF96AE4883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BD681A22FD746EBAA5A8B63 /* NJLIGame */;
+			targetProxy = 0F89024419EE489B88353629 /* PBXContainerItemProxy */;
+		};
+		CF9FB43A803D4B5389BD2AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E7A9017DB1F4B499FA342B8 /* Ldoc */;
+			targetProxy = 0D4362D717AF47618BFF6DD4 /* PBXContainerItemProxy */;
+		};
+		E753D329B2FF4B27B9E482D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CB8373F6B7A4EA58173ABD9 /* ALL_BUILD */;
+			targetProxy = E467042C3B0F44C9B56DE5D6 /* PBXContainerItemProxy */;
+		};
+		FD9C04772D69484783409100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B78840F3D1C4F469194679E /* ZERO_CHECK */;
+			targetProxy = C73CCED9C3AE478880E5B8C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		15F68899BA8647CC8623D2DE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		1C9A84D5E3674EA287FFFB13 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CreateIcons;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		26D417338ADB41D3932CCE26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		30BF535A13AE4DA5B2235A4F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CreateIcons;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		39C5F4975F8245628655FEB0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3AFB668B42CC4CCEBF8BF23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+			};
+			name = Release;
+		};
+		3C9790E454FA4F7B84280F81 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		46BB0681719C45DE86FDCE8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/build";
+			};
+			name = Release;
+		};
+		4C1A1628ACBD4494906EB04D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		4D1E3945703B453098ACB5E6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+			};
+			name = MinSizeRel;
+		};
+		52FBC3D7D0DA49A8B64AEF47 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5CC19E1925954B179823A115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "really-clean";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		651AE50B17604EF58195CEC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "really-clean";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		6B860EEA46374B9B81319C29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		6CEF5FC012AF4E2494E8FE72 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "really-clean";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		74CD503C80D046B59489ED75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		75517798FB3B43D5BE59AF31 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/build";
+			};
+			name = MinSizeRel;
+		};
+		7B9100684AE145839FC71C51 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7CEB3074458846EA9AE140CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		84216714BE87499BA6159DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		8E593A4A1F41487294C4F2BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		9575221224CE457995454798 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A9431CB5738D43D0A969D604 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Ldoc;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B188D2097FF4429EB073D66E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B1CD0755B88A419AB6EE6F11 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B58C2F9A99734E5D9F3D1E5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		B87F2DFE85A7402A980EACFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CreateIcons;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		BD1CB2994CBD4509BE6FF085 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Ldoc;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		BE1B66D2A15F44AEA72046D3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "really-clean";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		BEF5AC2AC3114E66B327760E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		CA1EA03026384D2C9035CDB9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/build";
+			};
+			name = RelWithDebInfo;
+		};
+		CDB4EC3C97664EC3BD8A55DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Ldoc;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		CE4DA6B5355D446080999EE1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+			};
+			name = RelWithDebInfo;
+		};
+		D0B3B042B3294494B8499E5A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Ldoc;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F7670EF1F5464EC78C2B009F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/build";
+			};
+			name = Debug;
+		};
+		FF2CBE0FA5AD42E294EF5173 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'NJLI_VERSION_MAJOR=\"\"'","'NJLI_VERSION_MINOR=\"\"'","'NJLI_VERSION_RELEASE=\"\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks,"/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../External/thirdparty/SDL2/include","/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/../../Engine/generated/include");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CreateIcons;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D21BB95E3224266AD866C6F /* Build configuration list for PBXAggregateTarget "package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEF5AC2AC3114E66B327760E /* Debug */,
+				4C1A1628ACBD4494906EB04D /* Release */,
+				7B9100684AE145839FC71C51 /* MinSizeRel */,
+				15F68899BA8647CC8623D2DE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3FC0CB09EFEF476DB70135F5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74CD503C80D046B59489ED75 /* Debug */,
+				8E593A4A1F41487294C4F2BD /* Release */,
+				B1CD0755B88A419AB6EE6F11 /* MinSizeRel */,
+				B188D2097FF4429EB073D66E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		594EA9B4E21342EBAD619D5D /* Build configuration list for PBXProject "NJLIGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7670EF1F5464EC78C2B009F /* Debug */,
+				46BB0681719C45DE86FDCE8C /* Release */,
+				75517798FB3B43D5BE59AF31 /* MinSizeRel */,
+				CA1EA03026384D2C9035CDB9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A3D60368FBF47E0B2B1E779 /* Build configuration list for PBXAggregateTarget "really-clean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CC19E1925954B179823A115 /* Debug */,
+				651AE50B17604EF58195CEC0 /* Release */,
+				BE1B66D2A15F44AEA72046D3 /* MinSizeRel */,
+				6CEF5FC012AF4E2494E8FE72 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		957DE083170B4880A32D7A6F /* Build configuration list for PBXAggregateTarget "CreateIcons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2CBE0FA5AD42E294EF5173 /* Debug */,
+				B87F2DFE85A7402A980EACFB /* Release */,
+				30BF535A13AE4DA5B2235A4F /* MinSizeRel */,
+				1C9A84D5E3674EA287FFFB13 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A5EA7B4087D4CC084E41EB1 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B860EEA46374B9B81319C29 /* Debug */,
+				B58C2F9A99734E5D9F3D1E5B /* Release */,
+				3C9790E454FA4F7B84280F81 /* MinSizeRel */,
+				9575221224CE457995454798 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BE386A4AD44F47A9B9937842 /* Build configuration list for PBXNativeTarget "NJLIGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEB3074458846EA9AE140CE /* Debug */,
+				3AFB668B42CC4CCEBF8BF23D /* Release */,
+				4D1E3945703B453098ACB5E6 /* MinSizeRel */,
+				CE4DA6B5355D446080999EE1 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E3211AC9240440C599F51579 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26D417338ADB41D3932CCE26 /* Debug */,
+				84216714BE87499BA6159DAA /* Release */,
+				52FBC3D7D0DA49A8B64AEF47 /* MinSizeRel */,
+				39C5F4975F8245628655FEB0 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EE231C48F8484A2793035BAE /* Build configuration list for PBXAggregateTarget "Ldoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDB4EC3C97664EC3BD8A55DC /* Debug */,
+				BD1CB2994CBD4509BE6FF085 /* Release */,
+				D0B3B042B3294494B8499E5A /* MinSizeRel */,
+				A9431CB5738D43D0A969D604 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3B9F1816D444B0BAF3CC961 /* Project object */;
+}
