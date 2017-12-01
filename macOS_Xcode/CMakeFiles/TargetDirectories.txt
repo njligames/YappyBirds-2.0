@@ -1,8 +1,0 @@
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/package.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/install.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/really-clean.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/NJLIGame.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/Ldoc.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/CreateIcons.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/ALL_BUILD.dir
-/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/macOS_Xcode/CMakeFiles/ZERO_CHECK.dir

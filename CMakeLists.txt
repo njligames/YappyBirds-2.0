@@ -119,8 +119,8 @@ IF( ${NJLI_BUILD_PLATFORM} STREQUAL "appletv" )
     )
   ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
 
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -158,8 +158,8 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
     )
   ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
 
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -168,42 +168,15 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
 
 ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "macOS" )
 
-  SET(imported_SDL2_location "${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2/lib/${NJLI_BUILD_PLATFORM}/10.12/Release/libSDL2.a" )
-  SET(imported_NJLIshared_location "${CMAKE_SOURCE_DIR}/../../Engine/generated/platform/${NJLI_BUILD_PLATFORM}/10.13/macosx/Release/lib/libnjli.dylib" )
-  SET(imported_NJLIstatic_location "${CMAKE_SOURCE_DIR}/../../Engine/generated/platform/macOS/10.13/macosx/Release/lib/static/libnjli.a" )
+  #SET(imported_SDL2_location "${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2/lib/${NJLI_BUILD_PLATFORM}/10.12/Release/libSDL2.a" )
 
   SET(imported_NJLIshared_directory_location "${CMAKE_SOURCE_DIR}/../../Engine/generated/platform/${NJLI_BUILD_PLATFORM}/10.13/macosx/Release/lib" )
-
-  LIST(APPEND NJLIGameEngine_HDRS /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks  )
+  SET(imported_NJLIshared_location "${imported_NJLIshared_directory_location}/libnjli.dylib" )
 
   SET ( CMAKE_OSX_ARCHITECTURES ${ARCHS_STANDARD_32_BIT} CACHE string "Build architecture for macOS" )
-  SET ( EXTRA_PLATFORM_LIBS
-    ${EXTRA_PLATFORM_LIBS}
-    "-framework OpenGL"
-    "-framework Foundation"
-    "-framework AudioToolbox"
-    "-framework AVFoundation"
-    "-framework CoreVideo"
-    "-framework Cocoa"
-    "-framework CoreAudio"
-    "-framework ForceFeedback"
-    "-framework IOKit"
-    "-framework AudioToolbox"
-    "-framework CoreFoundation"
-    "-framework AudioUnit"
-    "-framework Carbon"
-    "-framework OpenAL"
-  )
 
-#IF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
-#SET ( EXTRA_PLATFORM_LIBS
-#${EXTRA_PLATFORM_LIBS}
-#"-framework OpenAL"
-#)
-#ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
-
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/projects/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -323,18 +296,9 @@ INCLUDE_DIRECTORIES( ${NJLIGameEngine_HDRS} )
 INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2/include" )
 INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/../../Engine/generated/include")
 
-#ADD_LIBRARY(imported_SDL2 SHARED IMPORTED )
-#SET_TARGET_PROPERTIES(imported_SDL2 PROPERTIES IMPORTED_LOCATION ${imported_SDL2_location})
-#LIST(APPEND THIRD_PARTY_LIBS imported_SDL2)
-
 ADD_LIBRARY(libnjli_shared STATIC IMPORTED )
 SET_TARGET_PROPERTIES(libnjli_shared PROPERTIES IMPORTED_LOCATION ${imported_NJLIshared_location})
 LIST(APPEND THIRD_PARTY_LIBS libnjli_shared)
-
-
-#ADD_LIBRARY(libnjli_static STATIC IMPORTED )
-#SET_TARGET_PROPERTIES(libnjli_static PROPERTIES IMPORTED_LOCATION ${imported_NJLIstatic_location})
-#LIST(APPEND THIRD_PARTY_LIBS libnjli_static)
 
 ADD_CUSTOM_COMMAND(
   OUTPUT
@@ -482,8 +446,8 @@ ELSE()
   #ENDIF (APPLE)
 
   if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-
-          SET(BUNDLE_PATH ${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/${NJLI_PRODUCT_NAME}.app)
+    
+    SET(BUNDLE_PATH "${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_BUILD_TYPE}/${NJLI_PRODUCT_NAME}.app")
 
     IF( ${NJLI_BUILD_PLATFORM} STREQUAL "appletv" )
       IF(IS_RELEASE)
@@ -518,72 +482,47 @@ ELSE()
         )
       ENDIF(IS_RELEASE)
     ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "macOS" )
-          FILE(GLOB shared_libs
-            ${imported_NJLIshared_directory_location}/*.dylib
-            )
-          FOREACH(shared_lib ${shared_libs})
-            add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
-              COMMAND ${CMAKE_COMMAND} -E copy_if_different "${shared_lib}" "${BUNDLE_PATH}/Contents/MacOS"
-              COMMENT "Copying the shared library to exe"
-              VERBATIM
-              )
-          ENDFOREACH()
-          FILE(GLOB the_shared_libs
-            ${BUNDLE_PATH}/Contents/MacOS/*.dylib
-            )
-      #IF(IS_RELEASE)
-        file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake "
-
-          include(BundleUtilities)
-          #SET(GLOB shared_libs \"${imported_NJLIshared_directory_location}/*.dylib\")
-
-          fixup_bundle(\"${BUNDLE_PATH}\" \"${the_shared_libs}\" \"${GAME_ASSETS}\"  )
-          message(\"Signing application bundle: ${BUNDLE_PATH}\")
-          # https://www.slicer.org/wiki/Documentation/Nightly/Developers/Mac_OS_X_Code_Signing
-          #execute_process(
-          #  COMMAND codesign --deep --force --sign \"$ENV{NJLI_DEVELOPMENT_TEAM}\" -i \"${NJLI_PRODUCT_BUNDLE_IDENTIFIER}\" \"${BUNDLE_PATH}\"
-          #)
-          #execute_process(
-          #  COMMAND codesign -dv \"${BUNDLE_PATH}\"
-          #)
-          #execute_process(
-          #  COMMAND ${CMAKE_COMMAND} -E copy_directory \"${imported_NJLIshared_directory_location}\" \"${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/${NJLI_PRODUCT_NAME}.app/Contents/MacOS\"
-          #COMMAND ${CMAKE_COMMAND} -E copy \"$<TARGET_FILE:libnjli_shared>" "$<TARGET_FILE_DIR:${NJLI_PRODUCT_NAME}>\"
-          #  )
-          #set(CMAKE_INSTALL_RPATH \"${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/${NJLI_PRODUCT_NAME}.app/Contents/MacOS\")
-          #set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) # only if you want copy from the build tree
-        ")
+      FILE(GLOB shared_libs
+        ${imported_NJLIshared_directory_location}/*.dylib
+        )
+      
+      FOREACH(shared_lib ${shared_libs})
         add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different "${shared_lib}" "${BUNDLE_PATH}/Contents/MacOS"
+          COMMENT "Copying the shared library to exe"
+          VERBATIM
+          )
+      ENDFOREACH()
+
+      FILE(GLOB the_shared_libs
+        ${BUNDLE_PATH}/Contents/MacOS/*.dylib
+        )
+      
+      FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake "
+          INCLUDE(BundleUtilities)
+
+          MESSAGE(\"Fixing application bundle: ${BUNDLE_PATH} ${the_shared_libs} ${GAME_ASSETS}\")
+
+          FIXUP_BUNDLE(\"${BUNDLE_PATH}\" \"${the_shared_libs}\" \"${GAME_ASSETS}\"  )
+
+          MESSAGE(\"Signing application bundle: ${BUNDLE_PATH}\")
+
+          EXECUTE_PROCESS(
+            COMMAND codesign --deep --force --sign \"$ENV{NJLI_DEVELOPMENT_TEAM}\" -i \"${NJLI_PRODUCT_BUNDLE_IDENTIFIER}\" \"${BUNDLE_PATH}\"
+          )
+          EXECUTE_PROCESS(
+            COMMAND codesign -dv \"${BUNDLE_PATH}\"
+          )
+        ")
+        
+        ADD_CUSTOM_COMMAND(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
           COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake
         )
-      #ENDIF(IS_RELEASE)
-
-      #/Users/jamesfolk/Documents/NJLI/Games/YappyBirds-2.0/projects/macOS_Xcode/MyStage/Debug/YappyBirds.app/Contents/
-      #ADD_CUSTOM_COMMAND(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
-      #  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-      #  ${imported_NJLIshared_location}
-      #  ${BUNDLE_PATH}
-      #  )
-
-
-      #            add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
-      #          COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:libnjli_shared>" "$<TARGET_FILE_DIR:${NJLI_PRODUCT_NAME}>"
-      #              COMMENT "Copying the shared library to exe"
-      #              VERBATIM
-      #            )
-      #      FOREACH(shared_lib ${shared_libs})
-      #        add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
-      #          COMMAND ${CMAKE_COMMAND} -E copy "${shared_lib}" "$<TARGET_FILE_DIR:${NJLI_PRODUCT_NAME}>"
-      #          COMMENT "Copying the shared library to exe"
-      #          VERBATIM
-      #        )
-      #      ENDFOREACH()
-
-
 
     ENDIF( ${NJLI_BUILD_PLATFORM} STREQUAL "appletv" )
 
     INSTALL( DIRECTORY ${BUNDLE_PATH} DESTINATION platform/${NJLI_BUILD_DIR}/${CMAKE_BUILD_TYPE}/bin USE_SOURCE_PERMISSIONS )
+
   else()
     IF( ${NJLI_BUILD_PLATFORM} STREQUAL "emscripten" )
 

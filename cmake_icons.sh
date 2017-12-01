@@ -9,29 +9,29 @@ echo "The output directory for cmake_icons.sh is ${OUTPUT}"
 
 sh GenerateIcons/generateSystemImages.sh `pwd`/project.in/platform/  ${OUTPUT}
 
-mkdir -p projects
-mkdir -p projects/icons
-mkdir -p projects/icons/emscripten
-mkdir -p projects/icons/ios/Assets.xcassets
-mkdir -p projects/icons/appletv/Assets.xcassets
-mkdir -p projects/icons/macOS/Assets.xcassets
-mkdir -p projects/icons/watchOS/Assets.xcassets
-mkdir -p projects/icons/android
+mkdir -p build
+mkdir -p build/icons
+mkdir -p build/icons/emscripten
+mkdir -p build/icons/ios/Assets.xcassets
+mkdir -p build/icons/appletv/Assets.xcassets
+mkdir -p build/icons/macOS/Assets.xcassets
+mkdir -p build/icons/watchOS/Assets.xcassets
+mkdir -p build/icons/android
 
-cp ${OUTPUT}/emscripten/* projects/icons/emscripten/
+cp ${OUTPUT}/emscripten/* build/icons/emscripten/
 
-rm -rf projects/icons/ios/Assets.xcassets/
-cp -r ${OUTPUT}/ios/* projects/icons/ios/
+rm -rf build/icons/ios/Assets.xcassets/
+cp -r ${OUTPUT}/ios/* build/icons/ios/
 
-rm -rf projects/icons/appletv/Assets.xcassets/
-cp -r ${OUTPUT}/tvOS/* projects/icons/appletv/
+rm -rf build/icons/appletv/Assets.xcassets/
+cp -r ${OUTPUT}/tvOS/* build/icons/appletv/
 
-rm -rf projects/icons/macOS/Assets.xcassets/
-cp -r ${OUTPUT}/macOS/* projects/icons/macOS/
+rm -rf build/icons/macOS/Assets.xcassets/
+cp -r ${OUTPUT}/macOS/* build/icons/macOS/
 
-rm -rf projects/icons/watchOS/Assets.xcassets/
-cp -r ${OUTPUT}/watchkit/* projects/icons/watchOS/
+rm -rf build/icons/watchOS/Assets.xcassets/
+cp -r ${OUTPUT}/watchkit/* build/icons/watchOS/
 
-rm -rf projects/icons/android/icons/*
-cp -r ${OUTPUT}/android/* projects/icons/android/icons/
+rm -rf build/icons/android/icons/*
+cp -r ${OUTPUT}/android/* build/icons/android/icons/
 

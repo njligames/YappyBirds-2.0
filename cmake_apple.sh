@@ -79,12 +79,11 @@ build_apple_xcode()
 
     echo ${RELEASE} > ${FILE}
   fi
-
-  
   
   cmake ../.. -G "Xcode" \
     -DCMAKE_INSTALL_PREFIX=${NJLI_INSTALL_PREFIX} \
     -DCMAKE_BUILD_TYPE=${NJLI_BUILD_TYPE} \
+    -DCMAKE_CONFIGURATION_TYPES=${NJLI_BUILD_TYPE} \
     -DNJLI_BUILD_DIR=${MY_BUILD_DIR} \
     -DNJLI_PRODUCT_NAME=${NJLI_PRODUCT_NAME} \
     -DNJLI_PACKAGE_DIR=${NJLI_INSTALL_PREFIX}
@@ -164,17 +163,17 @@ build_apple_xcode()
   fi
 }
 
-mkdir -p projects
-mkdir -p projects/icons
-mkdir -p projects/icons/emscripten
-mkdir -p projects/icons/ios/Assets.xcassets
-mkdir -p projects/icons/appletv/Assets.xcassets
-mkdir -p projects/icons/macOS/Assets.xcassets
-mkdir -p projects/icons/watchOS/Assets.xcassets
-mkdir -p projects/icons/android
+mkdir -p build
+mkdir -p build/icons
+mkdir -p build/icons/emscripten
+mkdir -p build/icons/ios/Assets.xcassets
+mkdir -p build/icons/appletv/Assets.xcassets
+mkdir -p build/icons/macOS/Assets.xcassets
+mkdir -p build/icons/watchOS/Assets.xcassets
+mkdir -p build/icons/android
 
 
-cd projects
+cd build
 
 ##########################################3
 
