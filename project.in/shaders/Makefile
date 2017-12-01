@@ -10,7 +10,6 @@ CP := cp
 #
 #If no output specified, output is to [input].out.
 
-#$(NJLI_BUILD_PLATFORM)
 GL_TARGET := -1
 
 ifeq ($(NJLI_GRAPHICS_PLATFORM),opengl_es_2)
