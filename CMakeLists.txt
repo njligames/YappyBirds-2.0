@@ -19,7 +19,7 @@ cmake_minimum_required(VERSION 3.5.2)
 
 SET ( NJLI_PRODUCT_NAME NJLIGame CACHE STRING "The name of the product" )
 SET ( NJLI_PRODUCT_BUNDLE_IDENTIFIER "com.njligames.${NJLI_PRODUCT_NAME}" CACHE STRING "The bundle identifier for this product")
-SET ( NJLI_PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/project.in" CACHE STRING "The directory of where the project resides")
+SET ( NJLI_PROJECT_DIRECTORY "${CMAKE_SOURCE_DIR}/project.in" CACHE STRING "The directory of where the project resides")
 
 PROJECT (${NJLI_PRODUCT_NAME})
 
@@ -34,7 +34,7 @@ SET(CMAKE_PUBLIC_HEADER_OUTPUT_DIRECTORY MyStage)
 SET(CMAKE_RESOURCE_OUTPUT_DIRECTORY MyStage)
 
 SET ( NJLI_BUILD_PLATFORM "macOS" CACHE STRING "The platform to build for." )
-SET ( NJLI_COMMON_PLATFORM "${CMAKE_CURRENT_SOURCE_DIR}/build/common" )
+SET ( NJLI_COMMON_PLATFORM "${CMAKE_SOURCE_DIR}/build/common" )
 SET ( NJLIGameEngine_PACKAGE "${NJLI_PRODUCT_NAME}-${NJLI_BUILD_PLATFORM}" )
 SET ( NJLIGameEngine_PACKAGE_TARNAME "${NJLI_PRODUCT_NAME}" )
 SET ( NJLIGameEngine_PACKAGE_NAME "${NJLI_PRODUCT_NAME}" )
@@ -67,7 +67,6 @@ SET ( CMAKE_INSTALL_DATADIR data CACHE STRING "The data directory" )
 SET ( CMAKE_INSTALL_DOCDIR doc CACHE STRING "The documentation directory" )
 SET ( CMAKE_INSTALL_TESTDIR tests CACHE STRING "The tests directory" )
 
-#set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) # only if you want copy from the build tree
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 if( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -88,8 +87,11 @@ ADD_DEFINITIONS(-DNJLI_VERSION_MINOR=\"${NJLIGameEngine_VERSION_MINOR}\")
 ADD_DEFINITIONS(-DNJLI_VERSION_RELEASE=\"${NJLIGameEngine_VERSION_RELEASE}\")
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+  MESSAGE(
+    "${CMAKE_SOURCE_DIR}/project.in/platform/${NJLI_BUILD_PLATFORM}/Info.plist.in"
+    )
   CONFIGURE_FILE (
-    "${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/${NJLI_BUILD_PLATFORM}/Info.plist.in"
+    "${CMAKE_SOURCE_DIR}/project.in/platform/${NJLI_BUILD_PLATFORM}/Info.plist.in"
     "${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/platform/${NJLI_BUILD_PLATFORM}/Info.plist"
   )
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -130,8 +132,8 @@ IF( ${NJLI_BUILD_PLATFORM} STREQUAL "appletv" )
     )
   ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
 
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -140,9 +142,8 @@ IF( ${NJLI_BUILD_PLATFORM} STREQUAL "appletv" )
 
 ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
 
-  SET(imported_SDL2_location "${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2/lib/${NJLI_BUILD_PLATFORM}/10.3/Release\$(EFFECTIVE_PLATFORM_NAME)/libSDL2.a" )
-
-  LIST(APPEND NJLIGameEngine_HDRS /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks  )
+  SET(imported_NJLIshared_directory_location "${CMAKE_SOURCE_DIR}/../../Engine/generated/platform/ios/11.1/Release\$(EFFECTIVE_PLATFORM_NAME)/lib")
+  SET(imported_NJLIshared_location "${imported_NJLIshared_directory_location}/libnjli.dylib" )
 
   SET( CMAKE_OSX_SYSROOT "iphoneos" )
   SET( CMAKE_XCODE_EFFECTIVE_PLATFORMS "-iphoneos;-iphonesimulator" )
@@ -162,15 +163,15 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
     "-framework Foundation"
   )
 
-  IF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
-    SET ( EXTRA_PLATFORM_LIBS
-      ${EXTRA_PLATFORM_LIBS}
-      "-framework OpenAL"
-    )
-  ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
+  #IF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
+  #  SET ( EXTRA_PLATFORM_LIBS
+  #    ${EXTRA_PLATFORM_LIBS}
+  #    "-framework OpenAL"
+  #  )
+  #ENDIF( ${NJLI_SOUND_PLATFORM} STREQUAL "openal" )
 
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -179,15 +180,13 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
 
 ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "macOS" )
 
-  #SET(imported_SDL2_location "${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2/lib/${NJLI_BUILD_PLATFORM}/10.12/Release/libSDL2.a" )
-
   SET(imported_NJLIshared_directory_location "${CMAKE_SOURCE_DIR}/../../Engine/generated/platform/${NJLI_BUILD_PLATFORM}/10.13/macosx/Release/lib" )
   SET(imported_NJLIshared_location "${imported_NJLIshared_directory_location}/libnjli.dylib" )
 
   SET ( CMAKE_OSX_ARCHITECTURES ${ARCHS_STANDARD_32_BIT} CACHE string "Build architecture for macOS" )
 
-  SET( ASSET_CATALOGUE "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
-  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
+  SET( ASSET_CATALOGUE "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets" )
+  FILE( GLOB_RECURSE ASSET_CATALOGUE_FILES "${CMAKE_SOURCE_DIR}/build/icons/${NJLI_BUILD_PLATFORM}/Assets.xcassets/*" )
 
   SET( NJLI_RESOURCES ${LOCALIZATION_DIR} ${ASSET_CATALOGUE} ${GAME_ASSETS} )
   SET( NJLI_RESOURCES_FILES ${ASSET_CATALOGUE_FILES} ${GAME_ASSETS_FILES} )
@@ -209,7 +208,7 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "emscripten" )
     LIST(APPEND EXTRA_PLATFORM_LIBS "--emit-symbol-map")
     LIST(APPEND EXTRA_PLATFORM_LIBS "-g4")
 
-    #LIST(APPEND EXTRA_PLATFORM_LIBS "--shell-file ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/Platform.in/emscripten/debug_shell.html")
+    #LIST(APPEND EXTRA_PLATFORM_LIBS "--shell-file ${CMAKE_SOURCE_DIR}/cmake.in/Platform.in/emscripten/debug_shell.html")
 
   ELSE()
     # OPTIMIZING: https://kripken.github.io/emscripten-site/docs/optimizing/Optimizing-Code.html
@@ -217,7 +216,7 @@ ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "emscripten" )
 
     LIST(APPEND EXTRA_PLATFORM_LIBS "-s -O2 --llvm-opts 2")
 
-    #LIST(APPEND EXTRA_PLATFORM_LIBS "--shell-file ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/Platform.in/emscripten/release_shell.html")
+    #LIST(APPEND EXTRA_PLATFORM_LIBS "--shell-file ${CMAKE_SOURCE_DIR}/cmake.in/Platform.in/emscripten/release_shell.html")
 
   ENDIF( IS_DEBUG)
 
@@ -315,34 +314,34 @@ ADD_CUSTOM_COMMAND(
   OUTPUT
   ${CMAKE_CURRENT_BINARY_DIR}/icons
   COMMAND mkdir -p ${CMAKE_CURRENT_BINARY_DIR}/icons && sh cmake_icons.sh ${CMAKE_CURRENT_BINARY_DIR}/icons && rm -rf ${CMAKE_CURRENT_BINARY_DIR}/icons
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
   COMMENT
   "Generating the icons for all the platforms"
   VERBATIM
 )
 ADD_CUSTOM_TARGET(CreateIcons ALL
   DEPENDS
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Back.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Front.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Middle.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/LaunchInput.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Back.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Front.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Middle.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/LaunchInput.png
   ${CMAKE_CURRENT_BINARY_DIR}/icons
   SOURCES
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Back.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Front.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput_Middle.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/IconInput.png
-  ${CMAKE_CURRENT_SOURCE_DIR}/project.in/platform/LaunchInput.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Back.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Front.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput_Middle.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/IconInput.png
+  ${CMAKE_SOURCE_DIR}/project.in/platform/LaunchInput.png
 )
 
 ADD_CUSTOM_COMMAND(
   OUTPUT
-  ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/ldoc/index.html
+  ${CMAKE_SOURCE_DIR}/cmake.in/ldoc/index.html
   COMMAND
-  ldoc ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/ldoc.in/
+  ldoc ${CMAKE_SOURCE_DIR}/cmake.in/ldoc.in/
   WORKING_DIRECTORY
-  ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in
+  ${CMAKE_SOURCE_DIR}/cmake.in
   COMMENT
   "Generating API documentation with LDoc"
   VERBATIM
@@ -350,9 +349,9 @@ ADD_CUSTOM_COMMAND(
 
 ADD_CUSTOM_TARGET(Ldoc ALL
   DEPENDS
-  ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/ldoc/index.html
+  ${CMAKE_SOURCE_DIR}/cmake.in/ldoc/index.html
 )
-SET_SOURCE_FILES_PROPERTIES( ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/ldoc/index.html PROPERTIES GENERATED TRUE )
+SET_SOURCE_FILES_PROPERTIES( ${CMAKE_SOURCE_DIR}/cmake.in/ldoc/index.html PROPERTIES GENERATED TRUE )
 
 IF (APPLE)
   ADD_CUSTOM_TARGET(really-clean
@@ -365,7 +364,7 @@ IF( ${NJLI_BUILD_PLATFORM} STREQUAL "android" )
   ADD_LIBRARY( njli SHARED
     ${NJLIGameEngine_SRCS}
     ${CMAKE_SOURCE_DIR}/../../External/thirdparty/SDL2-2.0.5/src/main/android/SDL_android_main.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_SOURCE_DIR}/main.cpp
   )
   TARGET_LINK_LIBRARIES( njli ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS}
     ${NJLIGameEngine_LBY}
@@ -384,7 +383,7 @@ IF( ${NJLI_BUILD_PLATFORM} STREQUAL "android" )
 ELSE()
 
   ADD_EXECUTABLE( ${NJLI_PRODUCT_NAME}
-    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_SOURCE_DIR}/main.cpp
     ${NJLI_RESOURCES}
   )
 
@@ -439,9 +438,9 @@ ELSE()
 
   IF( ${NJLI_BUILD_PLATFORM} STREQUAL "emscripten" )
     IF(IS_DEBUG)
-      TARGET_LINK_LIBRARIES( ${NJLI_PRODUCT_NAME} ${NJLIGameEngine_LBY} ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS} "--shell-file ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/debug_shell.html" libnjli_static)
+      TARGET_LINK_LIBRARIES( ${NJLI_PRODUCT_NAME} ${NJLIGameEngine_LBY} ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS} "--shell-file ${CMAKE_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/debug_shell.html" libnjli_static)
     ELSE()
-      TARGET_LINK_LIBRARIES( ${NJLI_PRODUCT_NAME} ${NJLIGameEngine_LBY} ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS} "--shell-file ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/release_shell.html" libnjli_static)
+      TARGET_LINK_LIBRARIES( ${NJLI_PRODUCT_NAME} ${NJLIGameEngine_LBY} ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS} "--shell-file ${CMAKE_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/release_shell.html" libnjli_static)
     ENDIF(IS_DEBUG)
   ELSE()
     TARGET_LINK_LIBRARIES( ${NJLI_PRODUCT_NAME} ${NJLIGameEngine_LBY} ${EXTRA_PLATFORM_LIBS} ${THIRD_PARTY_LIBS})
@@ -476,21 +475,21 @@ ELSE()
         )
       ENDIF(IS_RELEASE)
     ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "ios" )
-      IF(IS_RELEASE)
-        file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake "
-          message(\"Signing application bundle: ${BUNDLE_PATH}\")
-          # https://www.slicer.org/wiki/Documentation/Nightly/Developers/Mac_OS_X_Code_Signing
-          execute_process(
-            COMMAND codesign --deep --force --sign \"$ENV{NJLI_DEVELOPMENT_TEAM}\" -i \"${NJLI_PRODUCT_BUNDLE_IDENTIFIER}\" \"${BUNDLE_PATH}\"
-          )
-          execute_process(
-            COMMAND codesign -dv \"${BUNDLE_PATH}\"
-          )
-        ")
-        add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
-          COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake
-        )
-      ENDIF(IS_RELEASE)
+      #IF(IS_RELEASE)
+      #  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake "
+      #    message(\"Signing application bundle: ${BUNDLE_PATH}\")
+      #    # https://www.slicer.org/wiki/Documentation/Nightly/Developers/Mac_OS_X_Code_Signing
+      #    execute_process(
+      #      COMMAND codesign --deep --force --sign \"$ENV{NJLI_DEVELOPMENT_TEAM}\" -i \"${NJLI_PRODUCT_BUNDLE_IDENTIFIER}\" \"${BUNDLE_PATH}\"
+      #    )
+      #    execute_process(
+      #      COMMAND codesign -dv \"${BUNDLE_PATH}\"
+      #    )
+      #  ")
+      #  add_custom_command(TARGET ${NJLI_PRODUCT_NAME} POST_BUILD
+      #    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/postprocess_bundle.cmake
+      #  )
+      #ENDIF(IS_RELEASE)
     ELSEIF( ${NJLI_BUILD_PLATFORM} STREQUAL "macOS" )
       FILE(GLOB shared_libs
         ${imported_NJLIshared_directory_location}/*.dylib
@@ -541,7 +540,7 @@ ELSE()
       INSTALL(FILES ${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/index.html.mem DESTINATION ${ENGINESOURCE_HTML_BUNDLE_PATH})
       INSTALL(FILES ${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/index.asm.js DESTINATION ${ENGINESOURCE_HTML_BUNDLE_PATH})
       INSTALL(FILES ${CMAKE_BINARY_DIR}/${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/index.js DESTINATION ${ENGINESOURCE_HTML_BUNDLE_PATH})
-      INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/favicon-32x32.ico DESTINATION ${ENGINESOURCE_HTML_BUNDLE_PATH})
+      INSTALL(FILES ${CMAKE_SOURCE_DIR}/cmake.in/Platform.in/emscripten/executable/favicon-32x32.ico DESTINATION ${ENGINESOURCE_HTML_BUNDLE_PATH})
 
     else()
 
@@ -551,7 +550,7 @@ ELSE()
 
   endif()
 
-  INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake.in/ldoc DESTINATION ${CMAKE_INSTALL_DOCDIR})
+  INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake.in/ldoc DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
   # https://cmake.org/Wiki/CMake:CPackConfiguration
   INCLUDE (InstallRequiredSystemLibraries)
@@ -560,7 +559,7 @@ ELSE()
   SET (CPACK_PACKAGE_NAME ${NJLIGameEngine_PACKAGE})
   SET (CPACK_PACKAGE_VENDOR "NJLI Games LLC.")
   SET (CPACK_PACKAGE_DESCRIPTION_SUMMARY ${NJLIGameEngine_PACKAGE_STRING})
-  SET (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+  SET (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
   SET (CPACK_PACKAGE_VERSION_MAJOR "${NJLIGameEngine_VERSION_MAJOR}")
   SET (CPACK_PACKAGE_VERSION_MINOR "${NJLIGameEngine_VERSION_MINOR}")
   SET (CPACK_PACKAGE_VERSION_RELEASE "${NJLIGameEngine_VERSION_RELEASE}")

@@ -80,7 +80,15 @@ build_apple_xcode()
     echo ${RELEASE} > ${FILE}
   fi
   
+  MY_GRAPHICS_PLATFORM=opengl_es_2
+  if [ $MY_PLATFORM == macOS ]
+  then
+    MY_GRAPHICS_PLATFORM=opengl_2
+  fi
+
   cmake ../.. -G "Xcode" \
+    -DNJLI_BUILD_PLATFORM=${MY_PLATFORM} \
+    -DNJLI_GRAPHICS_PLATFORM=${MY_GRAPHICS_PLATFORM} \
     -DCMAKE_INSTALL_PREFIX=${NJLI_INSTALL_PREFIX} \
     -DCMAKE_BUILD_TYPE=${NJLI_BUILD_TYPE} \
     -DCMAKE_CONFIGURATION_TYPES=${NJLI_BUILD_TYPE} \
@@ -177,11 +185,11 @@ cd build
 
 ##########################################3
 
-#rm -rf ios_Xcode
-#mkdir -p ios_Xcode
-#cd ios_Xcode
-#build_apple_xcode ios ${CMAKE_IOS_SYSTEM_VERSION} iphoneos 
-#cd ..
+rm -rf ios_Xcode
+mkdir -p ios_Xcode
+cd ios_Xcode
+build_apple_xcode ios ${CMAKE_IOS_SYSTEM_VERSION} iphoneos 
+cd ..
 
 ##########################################3
 
@@ -193,11 +201,11 @@ cd build
 
 ##########################################3
 
-rm -rf macOS_Xcode
-mkdir -p macOS_Xcode
-cd macOS_Xcode
-build_apple_xcode macOS ${CMAKE_MACOS_SYSTEM_VERSION} macosx
-cd ..
+#rm -rf macOS_Xcode
+#mkdir -p macOS_Xcode
+#cd macOS_Xcode
+#build_apple_xcode macOS ${CMAKE_MACOS_SYSTEM_VERSION} macosx
+#cd ..
 
 ##########################################3
 
